@@ -1,20 +1,50 @@
-﻿// remote_play.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
-
+﻿#include "sender.h"
+#include "protocol.h"
+#include <conio.h>
 #include <iostream>
+#include <windows.h>
 
-int main()
-{
-    std::cout << "Hello World!\n";
+int main(int argc, char* argv[]) {
+
+    if (argc >= 2 && std::string(argv[1]) == "sender") {
+        SetConsoleOutputCP(1251);
+        SetConsoleCP(1251);
+
+        Sender sender("192.168.1.105", PORT);
+
+        std::cout << "Use arrow keys. ESC to exit.\n";
+
+        while (true) {
+            int key = _getch();
+
+            if (key == 27) break; // ESC
+
+            if (key == 224) {
+                key = _getch();
+                switch (key) {
+                case 72:
+                    sender.sendPacket(Direction::UP);
+                    printf("UP!\n");
+                    break;
+                case 80:
+                    sender.sendPacket(Direction::DOWN);
+                    printf("DOWN!\n");
+                    break;
+                case 75:
+                    sender.sendPacket(Direction::LEFT);
+                    printf("LEFT!\n");
+                    break;
+                case 77:
+                    sender.sendPacket(Direction::RIGHT);
+                    printf("RIGHT!\n");
+                    break;
+                }
+            }
+        }
+    }
+    else {
+        // часть друга — он сюда допишет свой Qt код
+    }
+
+    return 0;
 }
-
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
-// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
-
-// Советы по началу работы 
-//   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
-//   2. В окне Team Explorer можно подключиться к системе управления версиями.
-//   3. В окне "Выходные данные" можно просматривать выходные данные сборки и другие сообщения.
-//   4. В окне "Список ошибок" можно просматривать ошибки.
-//   5. Последовательно выберите пункты меню "Проект" > "Добавить новый элемент", чтобы создать файлы кода, или "Проект" > "Добавить существующий элемент", чтобы добавить в проект существующие файлы кода.
-//   6. Чтобы снова открыть этот проект позже, выберите пункты меню "Файл" > "Открыть" > "Проект" и выберите SLN-файл.

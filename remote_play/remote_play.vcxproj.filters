@@ -18,5 +18,16 @@
     <ClCompile Include="remote_play.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="protocol.h">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="sender.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="sender.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

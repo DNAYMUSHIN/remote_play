@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="remote_play/remote_play.vcxproj" />
+  <Project Path="remote_play/remote_play.vcxproj" Id="31daff02-ac2c-4d2c-8dfb-2f861dfae8fa" />
 </Solution>

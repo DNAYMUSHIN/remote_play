@@ -1,0 +1,24 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docview
+
+# Build output
+Debug/
+Release/
+x64/
+x86/
+*.obj
+*.exe
+*.dll
+*.pdb
+*.ilk
+*.exp
+*.lib
+
+# IntelliSense
+ipch/
+*.VC.db
+*.VC.opendb

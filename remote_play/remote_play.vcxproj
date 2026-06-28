@@ -127,10 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="protocol.h" />
     <ClCompile Include="remote_play.cpp" />
     <ClCompile Include="visual.cpp" />
+    <ClCompile Include="sender.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="sender.h" />
     <ClInclude Include="mainwindow.h" />
     <ClInclude Include="protocol.h" />
     <ClInclude Include="visual.h" />
